@@ -8,7 +8,7 @@ const HeroPage = () => {
         Welcome to My<span className="text-cyan-400 font-serif">s</span>ity 😊
       </h1>
       <Link href={"/dashboard"}>
-        <button className="mt-10 p-3 bg bg-gradient-to-r from-cyan-400 to-pink-600 rounded-xl font-semibold text-lg">
+        <button className="btn">
           Dashboard
         </button>
       </Link>
