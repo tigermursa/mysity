@@ -6,10 +6,17 @@ const DisplayData = async () => {
   const { sites } = websiteData;
   console.log(sites);
   return (
-    <div>
-      <div>
-        {sites.map(data => <li key={data._id}>{data.name}</li>)}
-      </div>
+    <div className="flex flex-wrap justify-center gap-6">
+      {sites.map((data) => (
+        <div
+          key={data._id}
+          className="max-w-xs bg-white shadow-md rounded-md overflow-hidden"
+        >
+          <div className="p-4">
+            <h3 className="text-xl font-bold mb-2">{data.name}</h3>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };

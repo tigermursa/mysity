@@ -110,7 +110,7 @@ const Sidebar = () => {
             } `}
             href={"/dashboard/search"}
           >
-            <FaSistrix /> Search Engines
+            <FaSistrix /> Search 
           </Link>
           <Link
             className={`mb-3 hover:text-white flex items-center gap-2 link ${
@@ -127,6 +127,14 @@ const Sidebar = () => {
             href={"/dashboard/add"}
           >
             <FaPlus /> Add website
+          </Link>
+          <Link
+            className={`mb-3 hover:text-white flex items-center gap-2 link ${
+              pathname === "/dashboard/show" ? "text-white" : "text-gray-500"
+            } `}
+            href={"/dashboard/show"}
+          >
+            <FaPlus /> Show
           </Link>
         </ul>
       </nav>
