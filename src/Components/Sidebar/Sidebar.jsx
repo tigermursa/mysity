@@ -15,6 +15,7 @@ import {
   FaTag,
   FaGithubAlt,
   FaPlus,
+  FaRegEye,
 } from "react-icons/fa6";
 
 const Sidebar = () => {
@@ -110,7 +111,7 @@ const Sidebar = () => {
             } `}
             href={"/dashboard/search"}
           >
-            <FaSistrix /> Search 
+            <FaSistrix /> Search
           </Link>
           <Link
             className={`mb-3 hover:text-white flex items-center gap-2 link ${
@@ -134,7 +135,7 @@ const Sidebar = () => {
             } `}
             href={"/dashboard/show"}
           >
-            <FaPlus /> Show
+            <FaRegEye /> Show
           </Link>
         </ul>
       </nav>

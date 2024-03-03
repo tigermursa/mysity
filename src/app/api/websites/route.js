@@ -4,18 +4,26 @@ import Site from "../../../../models/SiteModel";
 
 //POST API
 export async function POST(request) {
-  const { name, image, category, link } = await request.json();
-  await connectMongoDB();
-  await Site.create({ name, image, category, link });
-  return NextResponse.json(
-    { message: "Website added successfully" },
-    { status: 201 }
-  );
+  try {
+    const { name, image, category, link } = await request.json();
+    console.log("Received data:", name, image, category, link);
+    const newData = await Site.create({ name, image, category, link });
+    return NextResponse.json({ newData });
+  } catch (error) {
+    console.error("error creating users:", error);
+    return NextResponse.json({ message: error }, { status: 500 });
+  }
 }
 
 //GET API
 export async function GET() {
   await connectMongoDB();
-  const sites = await Site.find();
-  return NextResponse.json({ sites });
+
+  try {
+    const sites = await Site.find();
+    return NextResponse.json({ sites });
+  } catch (error) {
+    console.error("error fetching users:", error);
+    return NextResponse.json({ message: error }, { status: 500 });
+  }
 }
