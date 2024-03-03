@@ -28,8 +28,8 @@ const AddSite = () => {
       });
 
       if (res.ok) {
-        console.log(e);
-        router.push("/products");
+        console.log("post done");
+        // router.push("/products");
       } else {
         throw new Error("Failed to create a Product");
       }
